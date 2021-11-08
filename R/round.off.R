@@ -1,5 +1,5 @@
 round.off <-
-function(x, n = 0) {
+function(x, digits = 0) {
   posneg = sign(x)
   z = abs(x)*10^n
   z = z + 0.5 + sqrt(.Machine$double.eps)
