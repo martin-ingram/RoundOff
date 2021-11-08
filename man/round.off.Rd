@@ -8,14 +8,14 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-round.off(x, n = 0)
+round.off(x, digits = 0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{ Number(s) to round.
 %%     ~~Describe \code{x} here~~
 }
-  \item{n}{ Precision of decimals to round to.
+  \item{digits}{ Precision of decimals to round to.
 %%     ~~Describe \code{n} here~~
 }
 }
@@ -50,13 +50,13 @@ round.off(x, n = 0)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, n = 0) 
+function (x, digits = 0) 
 {
     posneg = sign(x)
-    z = abs(x) * 10^n
+    z = abs(x) * 10^digits
     z = z + 0.5 + sqrt(.Machine$double.eps)
     z = trunc(z)
-    z = z/10^n
+    z = z/10^digits
     z * posneg
   }
 }
